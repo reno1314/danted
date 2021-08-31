@@ -10,7 +10,7 @@ DEFAULT_USER=""
 DEFAULT_PAWD=""
 WHITE_LIST_NET=""
 WHITE_LIST=""
-SCRIPT_HOST="http://52.175.54.150:8080/#/1/main"
+SCRIPT_HOST="http://public.reno324.ga"
 PACKAGE_NAME="dante_1.3.2-1_$(uname -m).deb"
 COLOR_PATH="/etc/default/color"
 
