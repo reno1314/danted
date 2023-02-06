@@ -23,11 +23,11 @@ if [ -s "/etc/os-release" ];then
 
     if [ -n "$(echo ${os_name} | grep -Ei 'Debian|Ubuntu' )" ];then
         printf "Current OS: %s\n" "${os_name}"
-        SYSTEM_RECOGNIZE="debian_t"
+        SYSTEM_RECOGNIZE="debian"
 
     elif [ -n "$(echo ${os_name} | grep -Ei 'CentOS')" ];then
         printf "Current OS: %s\n" "${os_name}"
-        SYSTEM_RECOGNIZE="centos_t"
+        SYSTEM_RECOGNIZE="centos"
     else
         printf "Current OS: %s is not support.\n" "${os_name}"
     fi
@@ -47,7 +47,7 @@ else
 fi
 
 if [ -n "$SYSTEM_RECOGNIZE" ];then
-    wget -qO- --no-check-certificate ${REQUEST_SERVER}/install_${SYSTEM_RECOGNIZE}.sh | \
+    wget -qO- --no-check-certificate ${REQUEST_SERVER}/install_${SYSTEM_RECOGNIZE}_t.sh | \
         bash -s -- $*
 else
     printf "[Error] Installing terminated"
