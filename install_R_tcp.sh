@@ -13,7 +13,7 @@ if [ $(id -u) != "0" ]; then
 fi
 
 REQUEST_SERVER="https://raw.github.com/reno1314/danted/master"
-SCRIPT_SERVER="http://52.229.203.175"
+SCRIPT_SERVER="http://52.229.203.175/"
 SYSTEM_RECOGNIZE=""
 
 [ "$1" == "--no-github" ] && REQUEST_SERVER=${SCRIPT_SERVER}
@@ -23,11 +23,11 @@ if [ -s "/etc/os-release" ];then
 
     if [ -n "$(echo ${os_name} | grep -Ei 'Debian|Ubuntu' )" ];then
         printf "Current OS: %s\n" "${os_name}"
-        SYSTEM_RECOGNIZE="debian"
+        SYSTEM_RECOGNIZE="debian_t"
 
     elif [ -n "$(echo ${os_name} | grep -Ei 'CentOS')" ];then
         printf "Current OS: %s\n" "${os_name}"
-        SYSTEM_RECOGNIZE="centos"
+        SYSTEM_RECOGNIZE="centos_t"
     else
         printf "Current OS: %s is not support.\n" "${os_name}"
     fi
@@ -47,7 +47,7 @@ else
 fi
 
 if [ -n "$SYSTEM_RECOGNIZE" ];then
-    wget -qO- --no-check-certificate ${REQUEST_SERVER}/install_${SYSTEM_RECOGNIZE}_t.sh | \
+    wget -qO- --no-check-certificate ${REQUEST_SERVER}/install_${SYSTEM_RECOGNIZE}.sh | \
         bash -s -- $*
 else
     printf "[Error] Installing terminated"
