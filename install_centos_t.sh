@@ -10,7 +10,7 @@ DEFAULT_USER=""
 DEFAULT_PAWD=""
 WHITE_LIST_NET=""
 WHITE_LIST=""
-SCRIPT_HOST="http://13.78.89.16/"
+SCRIPT_HOST="http://4.241.93.202/"
 PACKAGE_NAME="dante_1.3.2-1_$(uname -m).deb"
 COLOR_PATH="/etc/default/color"
 
